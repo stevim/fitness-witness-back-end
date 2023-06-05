@@ -9,16 +9,27 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      day: {
+      dayDate: {
+        allowNull: false,
         type: Sequelize.DATE
       },
       profileId: {
+        allowNull: false,
+        onDelete: 'CASCADE',
+        references: {
+          model: 'Profiles',
+          key: 'id',
+        },
         type: Sequelize.INTEGER
       },
       weight: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       photo: {
+        type: Sequelize.STRING
+      },
+      notes: {
         type: Sequelize.STRING
       },
       createdAt: {

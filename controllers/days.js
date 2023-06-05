@@ -22,11 +22,10 @@ async function index(req, res) {
 
 async function update(req, res) {
   try {
-    const day = Day.update(
-      req.body,
-      { where: { id: req.params.dayId }}
-    )
-    res.status(200).json(day)
+    const updatedDay = await Day.findByPk(req.params.dayId)
+    updatedDay.set(req.body)
+    await updatedDay.save()
+    res.status(200).json(updatedDay)
   } catch (err) {
     console.log(err)
     res.status(500).json({ err: err })

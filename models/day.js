@@ -9,7 +9,10 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Day.init({
-    day: DataTypes.DATE,
+    dayDate: {
+      type: DataTypes.DATE,
+      allowNull: false,
+    },
     profileId: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -21,10 +24,10 @@ module.exports = (sequelize, DataTypes) => {
     },
     weight: {
       type: DataTypes.INTEGER,
+      allowNull: false,
     },
-    photo: {
-      type: DataTypes.STRING,
-    },
+    photo: DataTypes.STRING,
+    notes: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Day',
