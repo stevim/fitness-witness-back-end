@@ -1,16 +1,16 @@
-# fly.toml app configuration file generated for fitnesswitness on 2023-06-08T11:00:37-04:00
+# fly.toml app configuration file generated for fitness-witness-app on 2023-06-08T11:12:36-04:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = "fitnesswitness"
+app = "fitness-witness-app"
 primary_region = "yyz"
 
 [env]
   PORT="8080"
 
 [http_service]
-  internal_port = 3000
+  internal_port = 8080
   force_https = true
   auto_stop_machines = true
   auto_start_machines = true
