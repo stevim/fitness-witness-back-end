@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   Day.init({
     dayDate: {
-      type: DataTypes.DATE,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     profileId: {
@@ -27,7 +27,6 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
     },
     photo: DataTypes.STRING,
-    notes: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Day',

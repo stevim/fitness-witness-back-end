@@ -43,10 +43,30 @@ async function deleteDay(req, res) {
   }
 }
 
+// async function addPhoto(req, res) {
+//   try {
+//     const imageFile = req.files.photo.path
+//     const day = await Day.findByPk(req.params.id)
+
+//     const image = await cloudinary.uploader.upload(
+//       imageFile, 
+//       { tags: `${day}` }
+//     )
+//     day.photo = image.url
+
+//     await day.save()
+//     res.status(201).json(day.photo)
+//   } catch (err) {
+//     console.log(err)
+//     res.status(500).json(err)
+//   }
+// }
+
 
 module.exports = {
   create,
   index,
   update,
   delete: deleteDay,
+  // addPhoto
 }

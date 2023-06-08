@@ -12,6 +12,7 @@ router.use(decodeUserFromToken)
 router.get('/', checkAuth, daysCtrl.index)
 router.post('/', checkAuth, daysCtrl.create)
 router.patch('/:dayId', checkAuth, daysCtrl.update)
+// router.put('/:dayId/add-photo', checkAuth, daysCtrl.addPhoto)
 router.delete('/:dayId', checkAuth, daysCtrl.delete)
 
 

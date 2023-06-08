@@ -11,7 +11,7 @@ module.exports = {
       },
       dayDate: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.STRING
       },
       profileId: {
         allowNull: false,
@@ -27,9 +27,6 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       photo: {
-        type: Sequelize.STRING
-      },
-      notes: {
         type: Sequelize.STRING
       },
       createdAt: {
