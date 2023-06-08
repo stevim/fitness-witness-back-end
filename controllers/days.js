@@ -12,7 +12,10 @@ async function create(req, res) {
 
 async function index(req, res) {
   try {
-    const days = await Day.findAll()
+    const profileId = req.user.id
+    const days = await Day.findAll({
+      where: { profileId: profileId }
+    })
     res.status(200).json(days)
   } catch (err) {
     console.log(err)
